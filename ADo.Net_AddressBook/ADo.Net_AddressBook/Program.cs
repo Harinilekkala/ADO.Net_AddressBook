@@ -42,6 +42,12 @@ namespace ADo.Net_AddressBook
                         getMethod.ReadData();
                         break;
                     }
+
+                case 3:
+                    {
+                        getMethod.UpdateTable();
+                        break;
+                    }
                 default:
                     {
                         Console.WriteLine("Enter a valid Number");
