@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ADo.Net_AddressBook
 {
     internal class AddressBookRepo
-    
+
     {
         public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADDRESSBOOK_SERVICE;Integrated Security=True;" +
             "Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -46,9 +46,49 @@ namespace ADo.Net_AddressBook
                 }
             }
         }
+        public void ReadData()
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            using (connection)
+            {
+                ADO.Net_AddressBook.AddressBook_Model model = new ADO.Net_AddressBook.AddressBook_Model();
+                try
+                {
+                    string query = "SELECT * FROM ADDRESS_BOOK";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            model.id = reader.GetInt32(0);
+                            model.firstName = reader.GetString(1);
+                            model.lastName = reader.GetString(2);
+                            model.address = reader.GetString(3);
+                            model.city = reader.GetString(4);
+                            model.state = reader.GetString(5);
+                            model.zipCode = reader.GetDouble(6);
+                            model.phone = reader.GetDouble(7);
+                            model.email = reader.GetString(8);
+                            model.type = reader.GetString(9);
+
+                            Console.WriteLine("ID: " + model.id + "\nFirst Name: " + model.firstName + "\nLast Name: " + model.lastName +
+                                "\nAddress" + model.address + "\nCity: " + model.city + "\nState:" + model.state + "\nZip Code: " + model.zipCode
+                                + "\nPhone: " + model.phone + "\nEmail: " + model.email + "\nType: " + model.type + "\n");
+                        }
+                    }
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
     }
-
-
-
 }
-
