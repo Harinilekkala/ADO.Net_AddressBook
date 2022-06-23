@@ -8,7 +8,7 @@ namespace ADo.Net_AddressBook
         public static void Main(string[] args)
         {
             AddressBookRepo getMethod = new AddressBookRepo();
-            Console.WriteLine("Enter 1 to Add Data\n2 to Read Data\nEnter a Number");
+            Console.WriteLine("Enter 1 to Add Data\n2 to Read Data\n3.UpdateTable\n4.DeleteData\n");
             int userInput = Convert.ToInt32(Console.ReadLine());
 
             switch (userInput)

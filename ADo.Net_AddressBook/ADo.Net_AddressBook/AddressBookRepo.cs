@@ -11,8 +11,8 @@ namespace ADo.Net_AddressBook
     internal class AddressBookRepo
 
     {
-        public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADDRESSBOOK_SERVICE;Integrated Security=True;" +
-            "Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADDRESSBOOK_SERVICE;";
+            //"Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public void AddData(ADO.Net_AddressBook.AddressBook_Model model)
         {
             SqlConnection connection = new SqlConnection(connectionString);
