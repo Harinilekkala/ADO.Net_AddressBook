@@ -93,9 +93,10 @@ namespace ADo.Net_AddressBook
 
         public void UpdateTable()
         {
-            SqlConnection connection = new SqlConnection(connectionString);
+            SqlConnection connection = new SqlConnection( connectionString);
             try
             {
+                string query = "SELECT * FROM UpdateTable";
                 using (connection)
                 {
                     Console.WriteLine("Enter ID");
