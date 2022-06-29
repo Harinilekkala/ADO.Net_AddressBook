@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADO.Net_AddressBook;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -150,5 +151,20 @@ namespace ADo.Net_AddressBook
                 connection.Close();
             }
         }
-    }
+        //Multi Thread Concept
+        public void AddMultipleContacts(List<AddressBook_Model> data)
+        {
+            data.ForEach(details =>
+            {
+                Thread thread = new Thread(() =>
+                {
+                    Console.WriteLine("Thread Start Time: " + DateTime.Now);
+                    this.AddData(details);
+                    Console.WriteLine("Contact Added: " + details.firstName);
+                    Console.WriteLine("Thread End Time: " + DateTime.Now);
+                });
+                thread.Start();
+            });
+        }
 }
+    }
