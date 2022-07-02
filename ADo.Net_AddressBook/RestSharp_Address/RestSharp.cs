@@ -63,5 +63,30 @@ namespace RestSharp_Address
                 Console.WriteLine(response.Content);
             });
         }
+
+        [TestMethod]
+        public void OnUpdatingAddressBook_ShouldUpdateOnJsonServer()
+        {
+            client = new RestClient("http://localhost:3000");
+            RestRequest request = new RestRequest("/friends/3", Method.Put);
+            AddressBook_Model body = new AddressBook_Model
+            {
+                firstName = "Harshini",
+                lastName = "Potnuri",
+                address = "15A",
+                city = "Rajmundry",
+                state = "Andhra Pradesh",
+                zipCode = 654321,
+                phone = 9704102176,
+                email = "harshini@gmail.com"
+            };
+            request.AddParameter("application/json", body, ParameterType.RequestBody);
+            RestResponse response = client.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            AddressBook_Model data = JsonConvert.DeserializeObject<AddressBook_Model>(response.Content);
+            Assert.AreEqual("Harshini", data.firstName);
+            Assert.AreEqual(9704102176, data.phone);
+            Console.WriteLine(response.Content);
+        }
     }
 }
