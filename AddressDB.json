@@ -1,0 +1,76 @@
+{
+  "family": [
+    {
+      "id": 1,
+      "firstName": "Harini",
+      "lastName": "Lekkala",
+      "address": "11A",
+      "city": "Salem",
+      "state": "Tamil Nadu",
+      "zipCode": "654321",
+      "phone": "9807654321",
+      "email": "harini@gamil.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Sudha",
+      "lastName": "Sukla",
+      "address": "13C",
+      "city": "Namakkal",
+      "state": "Tamil Nadu",
+      "zipCode": 654321,
+      "phone": 8970645231,
+      "email": "sudha@gmail.com",
+      "type": null
+    },
+    {
+      "id": 3,
+      "firstName": "Anitha",
+      "lastName": "Samy",
+      "address": "11A",
+      "city": "Komarapalayam",
+      "state": "Tamil Nadu",
+      "zipCode": 654321,
+      "phone": 7890654321,
+      "email": "anitha@gmail.com",
+      "type": null
+    },
+    {
+      "id": 4,
+      "firstName": "Saranya",
+      "lastName": "Bodham",
+      "address": "11A",
+      "city": "Komarapalayam",
+      "state": "Tamil Nadu",
+      "zipCode": 654321,
+      "phone": 6789045123,
+      "email": "saranya@gmail.com",
+      "type": null
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "firstName": "Nandini",
+      "lastName": "Gopal",
+      "address": "12B",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "zipCode": "645321",
+      "phone": "8907654321",
+      "email": "nandini@gamil.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Sneha",
+      "lastName": "Kumar",
+      "address": "13A",
+      "city": "Dindigul",
+      "state": "Tamil Nadu",
+      "zipCode": 654321,
+      "phone": 7890654321,
+      "email": "sneha@gmail.com",
+      "type": null
+    }
+  ]
+}
